@@ -2,6 +2,20 @@
 
 @section('content')
     
+    {{-- le controle d'afichage d'erreur --}}
+    @if ( count($errors) )
+    <div class="alert alert-danger" role="alert">
+      <ul>
+          @foreach ($errors->all() as $message)
+          <li>
+            {{ $message }}
+          </li>
+          @endforeach
+        </ul>
+      </div>
+
+    @endif
+    
 <!-- Default form login -->
 <form class="text-center border border-light p-2" action="{{ url('cvs/'.$cv->id) }}" method = "post">
     <input type="hidden" name="_method" value="PUT">
