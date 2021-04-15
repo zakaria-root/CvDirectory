@@ -32,7 +32,7 @@ Route::get('cvs', [CvController::class, 'index']);
 Route::get('cvs/create', [CvController::class, 'create']);
 Route::put('cvs/{id}', [CvController::class, 'updat']);
 Route::post('cvs', [CvController::class, 'store']);
-Route::get('cvs/destroy', [CvController::class, 'destroy']);
+Route::get('cvs/{id}', [CvController::class, 'destroy']);
 Route::get('cvs/{id}/edite', [CvController::class, 'edite']);
 
 Route::get('/confirm-password', function () {
