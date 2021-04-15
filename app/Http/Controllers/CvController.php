@@ -38,7 +38,7 @@ class CvController extends Controller
 
     }
     public function destroy(Request $request,$id){
-        return $request::all() ;
+        return $request->all();
     }
 
 }
