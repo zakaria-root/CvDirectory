@@ -12,7 +12,7 @@
     
     <!-- titre -->
     <input type="text" name="titre" id="defaultLoginFormEmail" class="form-control mb-3" placeholder="TITLE" value="{{old('titre')}} ">
-
+      
     {{-- le controle de l'afichage d'erreur --}}
       @if ($errors->get('titre'))
             <div class="alert alert-danger" role="alert">
@@ -21,13 +21,12 @@
         @endforeach
       </div>
       @endif
-    
         
 
 
 
       <!-- presentation -->
-      <textarea type="text" name="presentation" id="defaultLoginFormPassword" class="form-control mb-3" placeholder="presentation"> {{old('presentation')}} </textarea>
+      <textarea type="text" name="presentation" id="defaultLoginFormPassword" class="form-control mb-3" placeholder="PRESENTATION"> {{old('presentation')}} </textarea>
       
         {{-- le controle de l'afichage d'erreur --}}
         @if ($errors->get('presentation'))
