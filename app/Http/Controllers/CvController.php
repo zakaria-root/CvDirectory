@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cv;
+use App\Http\Requests\cvRequest;
+
 class CvController extends Controller
 {
     public function index(){
@@ -16,7 +18,7 @@ class CvController extends Controller
         return view('cv.create');
 
     }
-    public function store(Request $request){
+    public function store(cvRequest $request){
         
         $cv = new Cv();
         $cv->titre = $request->input('titre');
@@ -28,7 +30,7 @@ class CvController extends Controller
         $cv = Cv::find($id);
         return view('cv.edite', ['cv' => $cv ]);
     }
-    public function updat(Request $request, $id){
+    public function updat(cvRequest $request, $id){
 
         $cv = Cv::find($id);
         $cv->titre = $request->input('titre');

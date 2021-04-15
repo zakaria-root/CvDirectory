@@ -13,7 +13,7 @@ class cvRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,8 @@ class cvRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'titre' => 'required|min:3',
+            'presentation' => 'required|min:10|max:200' 
         ];
     }
 }
