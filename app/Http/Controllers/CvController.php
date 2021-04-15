@@ -38,7 +38,9 @@ class CvController extends Controller
 
     }
     public function destroy(Request $request,$id){
-        return $request->all();
+        $cv = Cv::find($id);
+        $cv->delete();
+        return redirect('cvs');
     }
 
 }
