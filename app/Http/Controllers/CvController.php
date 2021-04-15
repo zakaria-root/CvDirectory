@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use App\Models\Cv;
 class CvController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     public function index(){
         $listcv = Cv::all();
         return view('cv.index', ['cvs' => $listcv]);
@@ -22,6 +27,9 @@ class CvController extends Controller
         $cv->titre = $request->input('titre');
         $cv->presentation = $request->input('presentation');
         $cv->save();
+
+        session()->flash('success', 'la creation de le cv est terminé avec succes !!');
+
         return redirect('cvs');
     }
     public function edite($id){

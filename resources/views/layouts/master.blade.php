@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-
+    <div class="container ">
     <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd;">
         <div class="container-fluid">
           <button
@@ -38,8 +38,8 @@
           </div>
         </div>
       </nav>
-     
-@yield('content')
+      @yield('content')
+    </div>
 </body>
 </html>
 
