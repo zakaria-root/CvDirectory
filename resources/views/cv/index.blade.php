@@ -30,13 +30,13 @@
                             <td>{{$cv->presentation}}</td>
                             <td>{{$cv->created_at}}</td>
                             <td>
-                                <a href="" class="btn btn-primary">detail</a>
-                                <a href="{{url('cvs/'.$cv->id.'/edite')}} " class="btn btn-default" >modifer</a>
                                 <form action="{{url('cvs/'.$cv->id) }} " method="POST">
+                                    <a href="" class="btn btn-primary">detail</a>
+                                    <a href="{{url('cvs/'.$cv->id.'/edite')}} " class="btn btn-default" >modifer</a>
                                     {{ csrf_field()}}
                                     {{ method_fieled('DELETE') }}
+                                    <button type="submit" class="btn btn-danger">supprier</button>
                                 </form>
-                                <a href="" class="btn btn-danger">supprier</a>
                             </td>
                         </tr>
                         @endforeach
