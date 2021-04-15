@@ -32,6 +32,10 @@
                             <td>
                                 <a href="" class="btn btn-primary">detail</a>
                                 <a href="{{url('cvs/'.$cv->id.'/edite')}} " class="btn btn-default" >modifer</a>
+                                <form action="{{url('cvs/'.$cv->id) }} " method="POST">
+                                    {{ csrf_field()}}
+                                    {{ method_fieled('DELETE') }}
+                                </form>
                                 <a href="" class="btn btn-danger">supprier</a>
                             </td>
                         </tr>
