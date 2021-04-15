@@ -34,7 +34,7 @@
                                     <a href="" class="btn btn-primary">detail</a>
                                     <a href="{{url('cvs/'.$cv->id.'/edite')}} " class="btn btn-default" >modifer</a>
                                     {{ csrf_field()}}
-                                    {{ method_fieled('DELETE') }}
+                                    {{ method_field('DELETE') }}
                                     <button type="submit" class="btn btn-danger">supprier</button>
                                 </form>
                             </td>
