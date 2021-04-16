@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
 use App\Models\Cv;
 use App\Http\Requests\cvRequest;
+
 use Auth;
 
 class CvController extends Controller
@@ -30,6 +32,10 @@ class CvController extends Controller
         $cv->titre = $request->input('titre');
         $cv->presentation = $request->input('presentation');
         $cv->user_id = Auth::user()->id; 
+        
+        if ($request->hasFile('image')) {
+            $cv->image = $request->image->sort('image');
+        }
         $cv->save();
 
         session()->flash('success', 'la creation de le cv est terminé avec succes !!');

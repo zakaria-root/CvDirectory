@@ -10,8 +10,14 @@
 <body>
     
       @include('partials.menu')
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 ">
+            @include('partials.flash')
+          </div>
 
-      @include('partials.flash')
+        </div>
+      </div>
 
       @yield('content')
     </div>
