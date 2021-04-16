@@ -8,7 +8,7 @@
     {{ csrf_field() }}
     <div class="container col-md-6 ">
   
-      <p class="h4 mb-4">CREATE NEW CV</p>
+      <p class="h4 mb-4">MODIFIER CV</p>
   
       <!-- Email -->
       <input type="text" name="titre" id="defaultLoginFormEmail" class=" form-control mb-3 " placeholder="TITRE" value="{{$cv->titre}} ">
@@ -30,6 +30,14 @@
     @endforeach
   </div>
   @endif
+
+    {{-- add image --}}
+    <div class="form-group text-left">
+      <label for="">
+        <input class="control" type="file" name="image">
+    </label>
+  </div>
+
       <!-- Sign in button -->
       <button class="btn btn-danger btn-block my-4" type="submit">modifier</button>
   

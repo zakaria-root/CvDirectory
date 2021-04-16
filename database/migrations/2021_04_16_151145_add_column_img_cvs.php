@@ -14,7 +14,7 @@ class AddColumnImgCvs extends Migration
     public function up()
     {
         Schema::table('cvs', function (Blueprint $table) {
-            //
+            $table->string('image')->nullable()->after('presentation');
         });
     }
 
@@ -26,7 +26,7 @@ class AddColumnImgCvs extends Migration
     public function down()
     {
         Schema::table('cvs', function (Blueprint $table) {
-            //
+            $table->dropColumn('image');
         });
     }
 }
