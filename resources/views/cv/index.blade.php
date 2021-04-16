@@ -22,7 +22,7 @@
                     <thead>
                       <tr>
                         <th scope="col">#</th>
-                        <th scope="col">titre</th   >
+                        <th scope="col">titre</th>
                         <th scope="col">presentation</th>
                         <th scope="col">la date de creation</th>
                         <th scope="col">action</th>
@@ -31,7 +31,7 @@
                     <tbody>
                         @foreach ($cvs as $cv)
                         <tr>
-                            <th scope="row">{{$cv->id}}</th>
+                            <th scope="row">{{$cv->id}} <br>{{ $cv->user->name }} </th>
                             <td>{{$cv->titre}}</td>
                             <td>{{$cv->presentation}}</td>
                             <td>{{$cv->created_at}}</td>

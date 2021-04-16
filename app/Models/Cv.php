@@ -10,4 +10,8 @@ class Cv extends Model
 {   
     use SoftDeletes;
     use HasFactory;
+
+    public function user(){
+        return $this->belongsTo('App\Models\User');
+    }
 }
