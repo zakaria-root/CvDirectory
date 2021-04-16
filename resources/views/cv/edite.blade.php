@@ -3,7 +3,7 @@
 @section('content')
     
 <!-- Default form login -->
-<form class="text-center border border-light p-2 " action="{{ url('cvs/'.$cv->id) }}" method = "post">
+<form class="text-center border border-light p-2 " action="{{ url('cvs/'.$cv->id) }}" method = "post" enctype="multipart/form-data">
     <input type="hidden" name="_method" value="PUT">
     {{ csrf_field() }}
     <div class="container col-md-6 ">
