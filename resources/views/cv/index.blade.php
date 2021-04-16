@@ -2,19 +2,14 @@
 
 @section('content')
     
-    @if (session()->has('success'))
-        <div class="alert alert-success">
-            {{session()->get('success') }}
-        </div>
-    @endif
 
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2>la list de tout les cv</h2>
                 <br>
-                <div class="pull-right"> 
-                    <a href="{{url("cvs/create")}}" class="btn bnt-succes">NOUVEAU CV</a>
+                <h2>la list de tout les cv</h2>
+                <div class="text-right"> 
+                    <a href="{{url("cvs/create")}}" class="btn btn-outline-success pull-right">NOUVEAU CV</a>
                 </div>
                        
                 <table class="table">
@@ -40,7 +35,7 @@
                                     {{ csrf_field()}}
                                     {{ method_field('DELETE') }}
                                     <a href="" class="btn btn-primary">detail</a>
-                                    <a href="{{url('cvs/'.$cv->id.'/edite')}} " class="btn btn-default" >modifer</a>
+                                    <a href="{{url('cvs/'.$cv->id.'/edite')}} " class="btn btn-secondary" >modifer</a>
                                     <button type="submit" class="btn btn-danger">supprier</button>
                                 </form>
                             </td>
