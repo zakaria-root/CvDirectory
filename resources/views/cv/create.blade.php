@@ -4,7 +4,7 @@
 
 
 <!-- Default form login -->
-<form class="text-center border border-light p-2" action="{{ url('cvs') }}" method = "post">
+<form class="text-center border border-light p-2" action="{{ url('cvs') }}" method = "post" enctype="multipart/form-data" >
   {{ csrf_field() }}
   <div class="container col-md-6 ">
     <br>
@@ -42,7 +42,7 @@
     {{-- add image --}}
     <div class="form-group text-left">
       <label for="">
-        <input class="control" type="file" name="image">
+        <input class="form-control" type="file" name="image" />
     </label>
   </div>
   

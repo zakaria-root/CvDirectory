@@ -34,7 +34,8 @@ class CvController extends Controller
         $cv->user_id = Auth::user()->id; 
         
         if ($request->hasFile('image')) {
-            $cv->image = $request->image->sort('image');
+            
+            $cv->image = $request->image->store('images');        
         }
         $cv->save();
 
