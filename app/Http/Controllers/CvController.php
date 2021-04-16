@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cv;
-use Auth;
+use App\Http\Requests\cvRequest;
 
 class CvController extends Controller
 {
@@ -14,7 +14,7 @@ class CvController extends Controller
     }
 
     public function index(){
-        $listcv = Cv::where('user_id', Auth::user()->id)->get();
+        $listcv = Cv::all();
         return view('cv.index', ['cvs' => $listcv]);
 
     }
@@ -23,13 +23,13 @@ class CvController extends Controller
         return view('cv.create');
 
     }
-    public function store(Request $request){
+    public function store(cvRequest $request){
         
         $cv = new Cv();
         $cv->titre = $request->input('titre');
         $cv->presentation = $request->input('presentation');
-        $cv->user_id = Auth::user()->id;
         $cv->save();
+
         session()->flash('success', 'la creation de le cv est terminé avec succes !!');
 
         return redirect('cvs');
@@ -38,7 +38,7 @@ class CvController extends Controller
         $cv = Cv::find($id);
         return view('cv.edite', ['cv' => $cv ]);
     }
-    public function updat(Request $request, $id){
+    public function updat(cvRequest $request, $id){
 
         $cv = Cv::find($id);
         $cv->titre = $request->input('titre');
