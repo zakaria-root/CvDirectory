@@ -28,6 +28,7 @@ return array(
     'App\\Http\\Requests\\cvRequest' => $baseDir . '/app/Http/Requests/cvRequest.php',
     'App\\Models\\Cv' => $baseDir . '/app/Models/Cv.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
+    'App\\Policies\\CvPolicy' => $baseDir . '/app/Policies/CvPolicy.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',

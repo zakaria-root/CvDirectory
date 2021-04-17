@@ -583,6 +583,7 @@ class ComposerStaticInit5fd34653c4b4c97d1252ec1d5581ba51
         'App\\Http\\Requests\\cvRequest' => __DIR__ . '/../..' . '/app/Http/Requests/cvRequest.php',
         'App\\Models\\Cv' => __DIR__ . '/../..' . '/app/Models/Cv.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Policies\\CvPolicy' => __DIR__ . '/../..' . '/app/Policies/CvPolicy.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
