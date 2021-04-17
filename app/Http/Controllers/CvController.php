@@ -80,6 +80,7 @@ class CvController extends Controller
     }
     public function show($id){
         $cv = Cv::find($id);
+        
         return view('cv.show', ['cvs' => $cv]);
     }
 

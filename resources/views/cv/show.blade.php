@@ -1,9 +1,10 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="container">
+    <div class="container " >
         <div class="row">
-            <div class="col-md-12 mt-5">
+            <div class="col-md-12 mt-5" id="app" >
+                <h3> @{{ message }} </h3>
                      <div class="card ">
                          
                 <h5 class="card-header h5 bg-primary">
@@ -59,5 +60,19 @@
         </div>
     </div>
     
+
+@endsection
+
+@section('javascript')
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message : 'la page show'
+        }
+        });
+</script>
+
 
 @endsection
