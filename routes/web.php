@@ -35,6 +35,7 @@ Route::post('cvs', [CvController::class, 'store']);
 Route::delete('cvs/{id}', [CvController::class, 'destroy']);
 Route::get('cvs/{id}/edite', [CvController::class, 'edite']);
 // Route::resource('cvs', CvController::class );
+Route::get('cvs/{id}/show', [CvController::class, 'show']);
 
 Route::get('/confirm-password', function () {
     return view('auth.confirm-password');
