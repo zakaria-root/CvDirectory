@@ -50,7 +50,10 @@
         {{ method_field('DELETE') }}
         <a href="" class="btn btn-primary">detail</a>
         <a href="{{url('cvs/'.$cv->id.'/edite')}} " class="btn btn-secondary" >modifer</a>
+        @can('delete', $cv)
+            
         <button type="submit" class="btn btn-danger">supprier</button>
+        @endcan
     </form> 
     </div>
 

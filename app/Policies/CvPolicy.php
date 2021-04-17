@@ -10,6 +10,12 @@ class CvPolicy
 {
     use HandlesAuthorization;
 
+    public function before($user, $ability){
+    if ($user->is_admin and $ability != 'delete') {
+        return true;
+    }
+    }
+
     /**
      * Determine whether the user can view any models.
      *
@@ -65,7 +71,7 @@ class CvPolicy
      */
     public function delete(User $user, Cv $cv)
     {
-        //
+        return $user->id === $cv->user_id;
     }
 
     /**
