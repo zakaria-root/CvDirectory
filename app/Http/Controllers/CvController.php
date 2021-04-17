@@ -78,5 +78,9 @@ class CvController extends Controller
         $cv->delete();
         return redirect('cvs');
     }
+    public function show($id){
+        $cv = Cv::find($id);
+        return view('cv.show', ['cvs' => $cv]);
+    }
 
 }

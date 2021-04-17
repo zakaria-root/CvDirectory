@@ -48,7 +48,7 @@
             <form action="{{url('cvs/'.$cv->id) }} " method="post">
         {{ csrf_field()}}
         {{ method_field('DELETE') }}
-        <a href="" class="btn btn-primary">detail</a>
+        <a href="{{url('cvs/'.$cv->id.'/show')}} " class="btn btn-primary">detail</a>
         <a href="{{url('cvs/'.$cv->id.'/edite')}} " class="btn btn-secondary" >modifer</a>
         @can('delete', $cv)
             
