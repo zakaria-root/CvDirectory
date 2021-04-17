@@ -28,13 +28,13 @@ Route::get('/', function () {
 //     return view('accueil');
 // });
 
-// Route::get('cvs', [CvController::class, 'index']);
-// Route::get('cvs/create', [CvController::class, 'create']);
-// Route::put('cvs/{id}', [CvController::class, 'updat']);
-// Route::post('cvs', [CvController::class, 'store']);
-// Route::delete('cvs/{id}', [CvController::class, 'destroy']);
-// Route::get('cvs/{id}/edite', [CvController::class, 'edite']);
-Route::resource('cvs', CvController::class );
+Route::get('cvs', [CvController::class, 'index']);
+Route::get('cvs/create', [CvController::class, 'create']);
+Route::put('cvs/{id}', [CvController::class, 'updat']);
+Route::post('cvs', [CvController::class, 'store']);
+Route::delete('cvs/{id}', [CvController::class, 'destroy']);
+Route::get('cvs/{id}/edite', [CvController::class, 'edite']);
+// Route::resource('cvs', CvController::class );
 
 Route::get('/confirm-password', function () {
     return view('auth.confirm-password');
