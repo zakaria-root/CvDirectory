@@ -45,6 +45,9 @@ class CvController extends Controller
     }
     public function edite($id){
         $cv = Cv::find($id);
+
+        $this->authorize('update', $cv);
+
         return view('cv.edite', ['cv' => $cv ]);
     }
     public function updat(cvRequest $request, $id){
