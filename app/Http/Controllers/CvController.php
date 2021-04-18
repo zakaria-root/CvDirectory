@@ -46,6 +46,7 @@ class CvController extends Controller
 
             $cv->image = $request->image->store('images');        
         }
+        
         $cv->save();
 
         session()->flash('success', 'la creation de le cv est terminé avec succes !!');
