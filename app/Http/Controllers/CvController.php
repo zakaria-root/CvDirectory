@@ -28,11 +28,13 @@ class CvController extends Controller
         return view('cv.index', ['cvs' => $listcv]);
 
     }
+
     public function create(){
 
         return view('cv.create');
 
     }
+
     public function store(cvRequest $request){
         
         $cv = new Cv();
@@ -48,15 +50,18 @@ class CvController extends Controller
 
         session()->flash('success', 'la creation de le cv est terminé avec succes !!');
 
-        return redirect('cvs');
+        return redirect()->route('cv.index');
     }
+
     public function edite($id){
-        $cv = Cv::find($id);
+        $cv = Cv::findOrFail($id);
 
         $this->authorize('update', $cv);
 
         return view('cv.edite', ['cv' => $cv ]);
+        
     }
+
     public function updat(cvRequest $request, $id){
 
         $cv = Cv::find($id);
@@ -68,20 +73,22 @@ class CvController extends Controller
             $cv->image = $request->image->store('images');        
         }
         $cv->save();
-        return redirect('cvs');
+        session()->flash('warning', 'la modification de le cv est terminé avec succes !!');
+        return redirect()->route('cv.index');
+    }
 
-    }
-    public function destroy(Request $request,$id){
-        $cv = Cv::find($id);
-        
-        $this->authorize('delete', $cv);
-        $cv->delete();
-        return redirect('cvs');
-    }
     public function show($id){
         $cv = Cv::find($id);
         
         return view('cv.show', ['cvs' => $cv]);
+    }
+
+    public function destroy($id){
+        $cv = Cv::findOrFail($id);
+        $this->authorize('delete', $cv);
+        Cv::destroy($id);
+        session()->flash('danger', 'la suppresion de le cv est terminé avec succes !!');
+        return redirect()->route('cv.index');
     }
 
 }

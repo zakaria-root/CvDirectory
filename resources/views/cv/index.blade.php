@@ -56,9 +56,7 @@
         @endcan
     </form> 
     </div>
-
-  
-
+    
   
   </div>
   <!-- Card -->
